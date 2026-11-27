@@ -1,0 +1,23 @@
+{
+  "name": "saarthi-setu-next",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "node --test tests/*.test.mjs",
+    "dev:all": "node scripts/run-all.mjs dev",
+    "start:all": "node scripts/run-all.mjs start",
+    "setup:all": "npm ci && npm ci --prefix services/rule-engine"
+  },
+  "dependencies": {
+    "next": "^16.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}
