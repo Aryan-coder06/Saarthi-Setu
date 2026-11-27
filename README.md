@@ -17,7 +17,7 @@
 
 ## 🎯 The problem
 
-**Smart India Hackathon 2026 · Problem statement SIH26092 · AI-Driven Scheme Matching for Marginalized Entrepreneurs.** The challenge is to make government support discoverable for people who may know their business needs but not a scheme's name, eligibility wording, or application path.
+**AI-Driven Scheme Matching for Marginalized Entrepreneurs.** The challenge is to make government support discoverable for people who may know their business needs but not a scheme's name, eligibility wording, or application path.
 
 A prospective entrepreneur may say, “I run a dairy business in Rajasthan and need a loan,” yet the information needed for matching is scattered across a conversation: age, category, income, project cost, loan need and whether the business already exists. A long form, an English-only search box, or a list of scheme names puts that burden on the applicant. A recommendation without a clear reason or next steps is hard to trust and act on.
 
