@@ -16,7 +16,7 @@ function publicError(status, details) {
 
 export async function POST(request) {
   const key = process.env.SARVAM_API_KEY;
-  if (!key) return Response.json({ error: 'Sarvam speech service is not configured.' }, { status: 503 });
+  if (!key) return Response.json({ error: 'Sarvam API key not set. Add SARVAM_API_KEY to enable speech transcription.' }, { status: 503 });
   if (!request.headers.get('content-type')?.includes('multipart/form-data')) {
     return Response.json({ error: 'Audio form required.' }, { status: 400 });
   }

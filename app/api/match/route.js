@@ -153,6 +153,9 @@ export async function POST(request) {
     if (raw.length > 65536) return Response.json({ error: 'Request too large' }, { status: 413 });
     const body = JSON.parse(raw);
     if (!body.profile || typeof body.profile !== 'object' || Array.isArray(body.profile)) return Response.json({ error: 'Invalid profile' }, { status: 400 });
+    if (typeof body.text === 'string' && body.text.trim() && !process.env.SARVAM_API_KEY) {
+      return Response.json({ error: 'Sarvam API key not set. Add SARVAM_API_KEY to enable live chat and voice interpretation.' }, { status: 503 });
+    }
     const history = Array.isArray(body.conversation_history)
       ? body.conversation_history.slice(-12).filter(item => ['user', 'assistant'].includes(item?.role) && typeof item.text === 'string').map(item => ({ role: item.role, text: item.text.slice(0, 1200) }))
       : [];

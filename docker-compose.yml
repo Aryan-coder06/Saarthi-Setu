@@ -1,0 +1,35 @@
+services:
+  rule-engine:
+    build:
+      context: ./services/rule-engine
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/health').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  web:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_MATCH_URL: /api/match
+        NEXT_PUBLIC_TRANSCRIBE_URL: /api/transcribe
+    ports:
+      - "${SAARTHI_PORT:-3000}:3000"
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      RULE_ENGINE_URL: http://rule-engine:3000/api/v1/match
+      SARVAM_API_KEY: ${SARVAM_API_KEY:-}
+      SARVAM_TTS_SPEAKER: ${SARVAM_TTS_SPEAKER:-shubh_enhi_ads}
+    depends_on:
+      rule-engine:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 5s
+      timeout: 3s
+      retries: 20

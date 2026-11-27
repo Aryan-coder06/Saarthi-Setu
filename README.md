@@ -124,6 +124,20 @@ The nine core fields are **business activity, state, age, gender, social categor
 
 ## 🚀 Run the prototype
 
+### Docker Compose · one command
+
+With Docker installed, run this from the repository root:
+
+```bash
+docker compose up --build
+```
+
+Open **http://localhost:3000/**. The root `docker-compose.yml` starts the Next.js website and bundled Rule Engine, waits for the engine to become healthy, and publishes the website on port `3000`. No `.env` file or API key is needed to build and see the main screen. Live Sarvam chat and transcription show a clear key-not-set message until configured.
+
+To enable live speech and AI interpretation, copy `.env.example` to `.env`, fill `SARVAM_API_KEY`, and run the same command again. The key stays out of Git. If port `3000` is occupied, set `SAARTHI_PORT` in `.env` to another host port and open that port instead.
+
+### Run without Docker
+
 **Requirements:** Node.js 20.9+, npm, a modern microphone-capable browser, and a Sarvam API key for the live speech and chat flow. Microphone access needs localhost or HTTPS.
 
 ```bash
@@ -142,7 +156,7 @@ Open **http://127.0.0.1:8080/assistant**. The Next.js app runs on port `8080`; t
 The example environment already sets `NEXT_PUBLIC_MATCH_URL=/api/match`, `NEXT_PUBLIC_TRANSCRIBE_URL=/api/transcribe` and `RULE_ENGINE_URL=http://127.0.0.1:3000/api/v1/match`. Keep `SARVAM_API_KEY` server-side; never give it a `NEXT_PUBLIC_` prefix. If changing ports, set `WEB_PORT` and `RULE_ENGINE_PORT` in the shell and update `RULE_ENGINE_URL`. A temporary HTTPS demo can be shared with `ngrok http 8080`.
 
 > [!TIP]
-> Without a Sarvam key, the web app can show an illustrative local demo, but live speech and AI interpretation require the key. The repository contains `.env.example` only; local secrets are ignored by Git.
+> Without a Sarvam key, the app still starts and shows its main screen. Live speech and AI interpretation show a key-not-set message. The repository contains `.env.example` only; local secrets are ignored by Git.
 
 ## 🧪 Evaluate it in 3 minutes
 
