@@ -1,5 +1,5 @@
 import { isLanguage } from '../../../lib/languages.mjs';
-import { REQUIRED, FIELDS, present, display, inconsistent } from '../../../lib/profile.mjs';
+import { REQUIRED, FIELDS, present, display, inconsistent, question } from '../../../lib/profile.mjs';
 
 const api = 'https://api.sarvam.ai/v1/chat/completions';
 const fields = ['age', 'gender', 'social_category', 'state', 'activity', 'income_annual', 'project_cost', 'loan_required', 'existing_business', 'purpose'];
@@ -214,6 +214,16 @@ export async function POST(request) {
     });
     const result = await response.json();
     if (!response.ok || result.success === false) return Response.json(result, { status: response.status });
+    if (!ready) {
+      const missingCore = REQUIRED.filter(field => !present(body.profile[field]));
+      result.status = missingCore.length ? 'NEEDS_MORE_INFO' : 'CLARIFICATION_REQUIRED';
+      result.missing_fields = missingCore.length ? missingCore : ['project_cost'];
+      result.clarification_questions = [missingCore.length
+        ? question(missingCore[0], 'en-IN')
+        : 'Please confirm the project cost and requested loan amount.'];
+      result.eligible_schemes = [];
+      result.partial_schemes = [];
+    }
     const reply = await composeReply(result, englishText, history);
     let localized = reply;
     if (language !== 'en-IN') {
