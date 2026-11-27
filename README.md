@@ -1,11 +1,11 @@
 <div align="center">
-  <img src="public/icons/icon-192.png" alt="Saarthi Setu mark" width="72" />
+  <img src="public/icons/icon-512.png" alt="Saarthi Setu mark" width="72" />
   <h1>Saarthi Setu</h1>
   <p><strong>Your voice. Your opportunity.</strong></p>
   <p>A multilingual, voice enabled guide from a person's business story to a reviewable government scheme report.</p>
   <p>
-    <img alt="Working prototype" src="https://img.shields.io/badge/status-working%20prototype-1C46D3?style=for-the-badge&labelColor=111111" />
-    <img alt="Voice and text" src="https://img.shields.io/badge/input-voice%20%2B%20text-F32D22?style=for-the-badge&labelColor=111111" />
+    <img alt="Working prototype" src="https://img.shields.io/badge/status-working%20prototype-137C53?style=for-the-badge&labelColor=132331" />
+    <img alt="Voice and text" src="https://img.shields.io/badge/input-voice%20%2B%20text-143E70?style=for-the-badge&labelColor=132331" />
   </p>
   <p><a href="#-the-problem">The problem</a> · <a href="#-the-solution">The solution</a> · <a href="#-how-it-works">How it works</a> · <a href="#-run-the-prototype">Run it</a> · <a href="#-evaluate-it-in-3-minutes">Judge's walkthrough</a></p>
 </div>
@@ -48,6 +48,12 @@ Saarthi Setu turns a conversation into a structured, **user-confirmed** profile,
 - 📐 **Rule-based matching:** the bundled Rule Engine checks eligibility rules, ranks matches and prepares document guidance. The report displays only results the engine marks `ELIGIBLE`.
 - 🧭 **Actionable report:** a printable English report shows profile amounts, rule-checked schemes, documents, official-source links when supplied, and a stage-by-stage path.
 - 📱 **Guest-first PWA:** responsive interface, no sign-up, and no database for the web conversation.
+
+**Guest entry:** choose a language, or let Saarthi detect it from the first message.
+
+![Saarthi Setu assistant entry with the civic illustration](docs/assistant-preview.png)
+
+**Live conversation:** explicit facts update the editable profile beside the central microphone.
 
 ![Saarthi Setu chat showing extracted profile details and the central microphone](docs/chat-preview.png)
 
