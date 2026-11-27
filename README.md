@@ -4,7 +4,6 @@
   <p><strong>Your voice. Your opportunity.</strong></p>
   <p>A multilingual, voice enabled guide from a person's business story to a reviewable government scheme report.</p>
   <p>
-    <img alt="Smart India Hackathon 2026" src="https://img.shields.io/badge/SIH%202026-SIH26092-FFD91A?style=for-the-badge&labelColor=111111" />
     <img alt="Working prototype" src="https://img.shields.io/badge/status-working%20prototype-1C46D3?style=for-the-badge&labelColor=111111" />
     <img alt="Voice and text" src="https://img.shields.io/badge/input-voice%20%2B%20text-F32D22?style=for-the-badge&labelColor=111111" />
   </p>
