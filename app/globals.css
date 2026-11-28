@@ -253,3 +253,33 @@ body.landing-motion-ready::before{height:6px;background:linear-gradient(90deg,#e
 .entry-illustration{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center}
 .entry-art>.section-index{z-index:1;left:25px;bottom:25px;padding:9px 12px;color:var(--ink);background:#f9f8f3e8;border:2px solid var(--ink);backdrop-filter:blur(8px)}
 @media(max-width:620px){.entry-art>.section-index{left:14px;bottom:14px;font-size:11px}}
+
+/* Portrait IVR film: editorial story on the left, watchable film on the right. */
+.demo-section{padding-block:clamp(70px,8vw,130px);background:radial-gradient(circle at 5% 5%,#fff0d9 0,transparent 36%),var(--paper)}
+.demo-layout{max-width:1450px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);border:var(--rule) solid var(--ink);box-shadow:13px 13px var(--ink)}
+.demo-story{min-width:0;padding:clamp(30px,5vw,76px);display:flex;flex-direction:column;align-items:flex-start;background:var(--saffron-light)}
+.demo-story .section-index{color:var(--green)}
+.demo-kicker{margin-top:clamp(50px,7vw,108px);display:inline-flex;align-items:center;gap:11px;font-size:12px;font-weight:800;letter-spacing:.13em}
+.demo-story h2{margin-top:20px;font-size:clamp(54px,5.5vw,94px);line-height:.94;letter-spacing:-.065em}
+.demo-story h2 em{color:var(--green);font-family:Georgia,'Times New Roman',serif;font-weight:500;font-style:italic;letter-spacing:-.07em}
+.demo-lead{max-width:490px;margin-top:26px;font-size:clamp(18px,1.6vw,23px);line-height:1.42}
+.demo-rule{width:100%;height:2px;margin:38px 0 23px;background:var(--ink)}
+.demo-beats{display:grid;gap:14px;width:100%}
+.demo-beats>div{display:grid;grid-template-columns:42px 1fr;gap:13px;align-items:start}
+.demo-beats span{font-weight:800;color:var(--green)}
+.demo-beats p{font-size:16px;line-height:1.35}
+.demo-pointer{width:100%;margin-top:auto;padding-top:45px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:var(--green);font-size:clamp(19px,2vw,30px);font-weight:800;letter-spacing:-.04em}
+.demo-arrow{display:inline-block;font-size:clamp(80px,10vw,145px);line-height:.55;transform-origin:30% 50%;animation:demo-nudge 2.5s ease-in-out infinite}
+.demo-stage{min-width:0;padding:20px clamp(16px,3vw,42px);display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:22px;color:#fff;background:radial-gradient(circle at 50% 45%,#224e4d 0,#142c37 45%,var(--ink) 100%)}
+.demo-stage-top,.demo-stage-bottom{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:11px;font-weight:800;letter-spacing:.1em}
+.demo-stage-top>span:first-child{display:inline-flex;align-items:center;gap:9px}
+.demo-stage-bottom>span:last-child{display:inline-flex;align-items:center;gap:9px;color:var(--yellow)}
+.demo-player{position:relative;width:min(100%,365px);aspect-ratio:9/16;border:3px solid #fff;box-shadow:12px 12px 0 #0008;background:#000}
+.demo-player video{width:100%;height:100%;display:block;object-fit:contain;background:#000}
+.demo-play{position:absolute;top:50%;left:50%;width:86px;height:86px;transform:translate(-50%,-50%);display:grid;place-items:center;border:3px solid var(--ink);border-radius:50%;color:var(--ink);background:var(--yellow);box-shadow:7px 7px var(--ink);transition:transform .2s ease,background .2s ease}
+.demo-play:hover{transform:translate(-50%,-50%) scale(1.08);background:#fff}
+.demo-play svg{margin-left:4px}
+@keyframes demo-nudge{50%{transform:translateX(12px)}}
+@media(max-width:860px){.demo-layout{grid-template-columns:1fr}.demo-story{padding:38px}.demo-kicker{margin-top:42px}.demo-pointer{padding-top:30px}.demo-arrow{font-size:92px}.demo-stage{padding:22px;gap:22px}}
+@media(max-width:620px){.demo-section{padding:55px 20px}.demo-layout{box-shadow:7px 7px var(--ink)}.demo-story{padding:27px}.demo-story h2{font-size:clamp(53px,13vw,75px)}.demo-kicker{margin-top:37px}.demo-lead{font-size:18px}.demo-pointer{font-size:20px}.demo-arrow{font-size:82px}.demo-stage-top,.demo-stage-bottom{font-size:9px}.demo-stage{padding:16px;gap:18px}.demo-player{width:min(100%,310px)}}
+@media(prefers-reduced-motion:reduce){.demo-arrow{animation:none}}
