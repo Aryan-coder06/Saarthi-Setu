@@ -3,6 +3,7 @@
   <h1>Saarthi Setu</h1>
   <p><strong>Your voice. Your opportunity.</strong></p>
   <p>A multilingual, voice enabled guide from a person's business story to a reviewable government scheme report.</p>
+  <p><a href="https://saarthi-setu.onrender.com/"><strong>🚀 Open the live prototype</strong></a></p>
   <p>
     <img alt="Working prototype" src="https://img.shields.io/badge/status-working%20prototype-137C53?style=for-the-badge&labelColor=132331" />
     <img alt="Voice and text" src="https://img.shields.io/badge/input-voice%20%2B%20text-143E70?style=for-the-badge&labelColor=132331" />
